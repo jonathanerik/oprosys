@@ -1,6 +1,4 @@
 <?php
-$conn=mysql_connect('localhost', 'root', '') or 
-die ('Error connnecting to mysql');
-mysql_select_db('oprosys');
+$con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "{https://oprosys.azurewebsites.net}", "{akashil@oprosys-mysqldbserver}", {P@ssw0rd}, {oprosys}, 3306);
  ?>
 
