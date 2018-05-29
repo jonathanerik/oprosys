@@ -1,4 +1,14 @@
 <?php
-$con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "{https://oprosys.azurewebsites.net}", "{akashil@oprosys-mysqldbserver}", {P@ssw0rd}, {oprosys}, 3306);
+$con=mysqli_init(); 
+mysqli_real_connect($con, "{oprosys.mysql.database.azure.com}", "{akashil@oprosys-mysqldbserver}", {P@ssw0rd}, {oprosys}, 3306);
+
+mysql_select_db($con,"oprosys");
+
+	if(!$con)
+	{
+		die("connection failed: ".mysqli_connect_error());
+	}
+	
+
  ?>
 
