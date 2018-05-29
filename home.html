@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="custom.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="local-fonts/Orbitron/Orbitron.css" rel="stylesheet">   
+<link href="local-fonts/Open-Sans/Open-Sans.css" rel="stylesheet">
+<link rel="stylesheet" href="css/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+
+<div class="Header">	
+	<center ><img src="images/DLSL-logo.png" class="logo" width="100px" height="100px"></center>
+	<center > <div class="Title">ICTC ONLINE </div> </center>
+	<center > <div class="SubTitle">De La Salle Lipa </div> </center>
+</div>
+</head>
+
+<style>
+	body{
+		background: #344e35 ;
+		font-family: 'open_sans_condensedlight';
+		font-size: 20px;
+
+	}
+	.ServiceTitle{
+		width: 1290px;
+		height: 30px;
+		background-color: #151815;
+		color: white;
+	}
+	
+	.Header{
+		width: 100%;
+		height: 190px;
+		background: black;
+		color: white;
+		top: 90px; 
+		margin-bottom: 20px;
+	}
+	
+	.Title{
+		font-family: 'orbitronlight';
+		font-size: 200%;
+		margin: auto;
+	}
+	
+	.SubTitle{
+		font-size: 20px;
+		font-family: 'open_sans_condensedlight';
+		margin: auto;
+	}
+	.logo{
+		margin: auto;
+	}
+	
+	.main-body{
+		width: 1300px;
+		height: 1000px;
+		border-style: solid 5px #333;
+		background: white;
+		margin: auto;
+		padding: 20px;
+	}
+	
+	footer{
+		width: 100%;
+		height: 320px;
+		background-color: #21282E; 
+		border-style: solid;
+		border-width: 2px;
+		border-color: #444;
+		color: white;
+		font-family: 'open_sans_condensedlight', sans-serif;
+	}
+	
+	.footer-info{
+		margin-left: 50px;
+		margin-top: 0px;
+		font-size: 80%;
+	}
+	.nav{
+	width: 500px;
+	height: 50px;
+	
+	margin:auto;
+	}		
+	.nav ul {
+	list-style-type: none;
+	margin: auto;
+	padding: 0;
+	overflow: hidden;
+	
+	}
+
+	.nav li {
+		float: left;
+	}
+
+	.nav a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	.nav a:hover {
+		background-color: #111;
+		color: white;
+	}
+	.loginbox{
+	margin:auto;
+	margin-top: 20px;
+	
+	width: 1030px;
+	font-family: 'orbitronlight';
+	}
+	
+	
+	.input-type{
+		width: 250px;
+		font-size: 16pt;
+	}
+	.paragraph {
+		color:black; 
+		text-align: justtify; 
+		padding: 10px; 
+		text-indent: 50px;
+		font-size: 12pt;
+		font-family: verdana;
+	
+	}
+	.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+	}
+	.modal-content {
+    background-color: #fefefe;
+	margin: auto;
+	margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+	 -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+	}
+
+
+/* The Close Button */
+	.close {
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+	}
+
+	@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+	}
+	.modal2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+	.modal-content2 {
+    background-color: #fefefe;
+	text-align: left;
+	font-size: 12pt;
+	margin: auto;
+	margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+	 -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+	}
+
+
+/* The Close Button */
+	.close2 {
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.close2:hover,
+	.close2:focus {
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+	}
+
+	@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+	}
+	.signin{
+		float: right;
+	}
+	.mySlides2 {display:none}
+	.w3-left, .w3-right, .w3-badge {cursor:pointer;}
+	.w3-badge {height:13px;width:13px;padding:0;}
+	.button{
+		background-color: #344e35 ;
+		color: white;
+	}
+	.button:hover{
+		background-color: black;
+		color: white;
+		cursor: pointer;
+	}
+</style> 
+<body>
+	
+	<div class="main-body">
+		
+		<!-- Trigger/Open The Modal -->
+		<div class = "signin">
+			<button class = "button" id="myBtn">SIGN IN</button>
+		</div>
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+			<span class="close">&times;</span>
+			<center>
+				<img src = "images/download.png"/ width = "130px" height = "130px" style = "margin-bottom: 20px;">
+				<form method = "POST" action = "home.php">
+					<h2><input class = "input-type" type = "text" name = "uname" placeholder = "Username" required></h2>
+					<h2><input class = "input-type" type="password" name="password" placeholder = "Password" required></br></br>
+					<input class ="button "type="submit" name="submit" value="LOG IN"/>
+				</form>
+			</center>
+		  </div>
+
+		</div>
+		
+			 <div class = "loginbox">
+				<h1 style = "text-align:center; font-family: 'orbitronlight';color:black;">ONLINE PROCUREMENT SYSTEM</h2>
+				<div style="margin:auto;" >
+				  <img class="mySlides2" src="images/1.jpg" style="width:1020px; height:400px; margin:auto; border: 2px solid black;">
+				  <img class="mySlides2" src="images/2.jpg" style="width:1020px; height:400px; margin:auto; border: 2px solid black;">
+				  <img class="mySlides2" src="images/3.jpg" style="width:1020px; height:400px; margin:auto; border: 2px solid black;">
+				</div>
+				<center><hr width = "800px;"></center>
+				<p class = "paragraph"><b>ONLINE PROCUREMENT SYSTEM</b> is a purchase request system 
+				online-documented to request any items needed by the organization. Traditionally, the request forms are written in a 
+				certain paper/form and then passed on to departments for evaluations. Upon submitting the request 
+				form to the Purchasing Department will the form will be generated into a Purchase Order. With the use of the system, 
+				the paper and written documents will be eliminated thus it will be online-documented. 
+				Using the system, the request forms will be precise and easier to manage.
+				</p>
+				<center><hr width = "800px;"></center>
+				<center><button class = "button" id="myBtn2">VIEW FAQs</button></center>
+			
+
+				<!-- The Modal -->
+				<div id="myModal2" class="modal2">
+
+				  <!-- Modal content -->
+				  <div class="modal-content2">
+					<span class="close2">&times;</span>
+			
+						<h1 style = "font-family: 'orbitronlight';">Frequently Asked Questions</h1>
+						<b>1. Why cant I open the system?</b><br/>
+						- Make sure you are connected to the internet because the system is an online based and can only be access with an 
+						ineternet connection<br/>
+						<b>2. What is minimum requirements to access the system?</b><br/>
+						- Your Desktop must at least have intel celeron, 4 GB RAM, and 500GB HDD<br/>
+						-Your Windows version must be Windows 7 or higher<br/>
+						- It can be access using Mozilla Firefox or Google Chrome <br/>
+						<b>3. How do I create an account?</b><br/>
+						- To create an account, you need to contact the ICTC office and set up an account for you to use<br/>
+						<b>4. How do I create a request form?</b><br/>
+						- To create a request form, simply login to your account (contact ICTC if you dont have an account) then create form. 
+						Fill out the necessary fields and then submit it to your immediate superior. <br/>
+						<b>5. How will I know if my request is approved or not?</b><br/>
+						- Simple Log in to your account and open the list of your request, in the table of your requests, you can confirm at the status 
+						column whether your requests is approved or not. In addition you could also review the comments of the ICTC section
+						 
+
+				
+				  </div>
+				
+				
+				
+			 </div>
+			 
+		
+		</div>
+		
+		
+		
+	</div>
+
+	
+
+
+
+
+<br/>
+<footer>
+	
+	<div class="footer-info">
+		<br>
+	<center>
+	<div class="footer-img">
+	<img src="images/footer-img1.png">
+	<img src="images/footer-img2.png">
+	</div>
+
+	<br>
+	De La Salle Lipa; ICTC<br>
+	1962 JP Laurel National Highway<br>
+	Mataas Na Lupa, Lipa City 4217<br>
+	Tel. No. 63.43.756-5555<br>
+	Telefax: 756-3117<br>
+	© Copyright 2018
+	<br>
+	</center>
+	</div>
+		
+
+</footer>
+
+</body>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides2");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}// Get the modal
+var modal2 = document.getElementById('myModal2');
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks on the button, open the modal 
+btn2.onclick = function() {
+    modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+    modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window2.onclick = function(event2) {
+    if (event2.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+
+</script>
+
+</html>
