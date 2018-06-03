@@ -183,7 +183,7 @@
 					session_destroy();
 				?>
 					<h1 style = "color:black;">You have successfully log out</h2>
-					<button type ="button" class = "submit" ><a href = "home.html">GOTO HOMEPAGE</a></button>
+					<button type ="button" class = "submit" ><a href = "index.html">GOTO HOMEPAGE</a></button>
 			
 			</center>
 		</div>
