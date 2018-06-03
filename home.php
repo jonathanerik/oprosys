@@ -152,6 +152,7 @@ body{
 </style> 
 <?php
 	session_start();
+	ob_start();
 	include('dbconnect.inc');
 	$username=$_POST['uname'];
 	$password=$_POST['password'];
