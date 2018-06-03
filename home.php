@@ -153,7 +153,7 @@ body{
 <?php
 	session_start();
 	ob_start();
-	include('dbconnect.php');
+	include('dbconnect.inc');
 	$username=$_POST['uname'];
 	$password=$_POST['password'];
 	$query1="SELECT * FROM requestors WHERE username = '$username' AND pass = '$password'";
