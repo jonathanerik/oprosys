@@ -214,7 +214,11 @@ body{
 						}
 						header("Location: profile.php");
 					}
-				
+					else
+					{
+						echo "<h2>Invalid user/password</h2>";
+						echo '<a href="index.html"><button class = "button">Login</button></a>';
+					}
 				?>
 			
 			</center>
