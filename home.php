@@ -190,7 +190,7 @@ body{
 						{
 							$_SESSION['u_id']=$row['requestor_id'];
 						}
-						header("location: ./status.php");
+						?><script>windows.location = "https://oprosys.azurewebsites.net/satus.php";</script>  <?php 
 					}
 					elseif($count2 == 1)
 					{
