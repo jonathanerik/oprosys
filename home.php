@@ -156,7 +156,7 @@ body{
 	include('dbconnect.inc');
 	$username=$_POST['uname'];
 	$password=$_POST['password'];
-	$query1="SELECT * FROM requestors WHERE username = '$username' AND pass = '$password'";
+	$query1="SELECT * FROM oprosys.requestors WHERE username = '$username' AND pass = '$password'";
 	$query2="SELECT * FROM admins WHERE username ='$username' AND pass ='$password'";
 	$query3="SELECT * FROM approvers WHERE username ='$username' AND pass ='$password'";
 
