@@ -170,10 +170,9 @@ $username = $_SESSION['username'];
 		}
 	.register {
 		background: white;
-		
 		margin: auto;
 		width: 900px;
-		height: 500px;
+		height: 550px;
 		margin-top: 20px;
 		padding: 10px;
 		color: black;'
@@ -264,6 +263,17 @@ $username = $_SESSION['username'];
 								<option value ="Router">Router</option>
 							</select>
 						</td>
+					</tr>	<tr>
+					<td>Brand Name </td>
+					<td>
+						<select name = "brand" required = "">
+							<option value ="none">---Select Brand---</option>
+							<option value ="Red Dragon">Red Dragon</option>
+							<option value ="Razer">Razer</option>
+							<option value ="Intel">Intel</option>
+							<option value ="Atech">Atech</option>
+						</select>
+					</td>
 					</tr>
 					<tr>
 						<td> Quantity </td>
@@ -277,7 +287,7 @@ $username = $_SESSION['username'];
 					</tr>
 					<tr>
 						<td>Description</td>
-						<td><input type = "text" name = "description"></td>
+						<td><input type = "text" name = "description" required = ""></td>
 					</tr>
 					<tr>
 						<td colspan = 2><input class = "submit" type = "submit" name = "Submit" value = "SUBMIT"></td>

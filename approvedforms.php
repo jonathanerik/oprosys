@@ -312,7 +312,7 @@ $username = $_SESSION['username'];
 					include('dbconnect.inc');
 					if ($username == 'superior1')
 					{
-						$view = "SELECT * FROM superior WHERE status = 'APPROVED BY IMMEDIATE SUPERIOR' ";
+						$view = "SELECT * FROM superior ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
 						if ( $resultif == 0)
@@ -335,7 +335,7 @@ $username = $_SESSION['username'];
 					}	
 					elseif ($username == 'section1')
 					{
-						$view = "SELECT * FROM section WHERE status = 'APPROVED BY ICTC SECTION' ";
+						$view = "SELECT * FROM section  ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
 						if ( $resultif == 0)
@@ -358,7 +358,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'director1')
 					{
-						$view = "SELECT * FROM director WHERE status = 'APPROVED BY ICTC DIRECTOR' ";
+						$view = "SELECT * FROM director ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
 						if ( $resultif == 0)
@@ -397,7 +397,7 @@ $username = $_SESSION['username'];
 									echo '<td>'.$record['username'].'</td>';
 									echo '<td>'.$record['itemname'].'</td>';
 									echo '<td>'.$record['status'].'</td>';
-									echo "<td class = 'action'><button type = 'button' class =  'details'><a href =\"view_approve.php?formid={$record['formid']}\">VIEW DETAILS</a></button></td>";
+									echo "<td class = 'action'><button type = 'button' class =  'details'><a href =\"view_approve1.php?formid={$record['formid']}\">VIEW DETAILS</a></button></td>";
 								echo '</tr>';
 							}
 						}

@@ -216,38 +216,86 @@ $username = $_SESSION['username'];
 				<button class = "submit" onclick = "location.href='approve.php'" >◄ BACK </button></a>
 			
 			</div>
+			<form action = "reject_form.php" method = "POST" > 
 			<center>
 				<?php
 					include('dbconnect.inc');
 					
 					$formid = $_REQUEST['formid'];
-					
+					if (isset($_POST['submitcomment']))
+					{
+						$comments = $_REQUEST['comment'];
+						if ( $username == 'superior1')
+						{
+							
+							$update = "UPDATE forms  SET status = 'REJECTED BY IMMEDIATE SUPERIOR', comments = '$comments' WHERE formid = '$formid'";
+							$result_update = mysql_query($update);
+							if ( $result_update)
+							{
+								echo '<h1><center> FORM WAS REJECTED! </center></h1>';
+							}
+							
+							$query = "SELECT * FROM forms WHERE formid = '$formid'";
+							$results = mysql_query($query);
+							while ($record = mysql_fetch_assoc($results))
+							{
+								$username = $record['username'];
+								$requestorid = $record['requestor_id'];
+								$status = $record['status'];
+								$itemname = $record['item_name'];
+							}
+							
+							$insert = "INSERT INTO superior (requestor_id,formid,username,itemname,status)
+								VALUES ('$requestorid','$formid','$username','$itemname','$status')";
+							$results_insert = mysql_query($insert); 
+						}
+					}
 					if ($username == 'superior1')
 					{
-						$update = "UPDATE forms  SET status = 'REJECTED BY IMMEDIATE SUPERIOR' WHERE formid = '$formid'";
-						$result_update = mysql_query($update);
-						if ( $result_update)
+						$status_query = "SELECT * FROM forms WHERE formid = '$formid'";
+						$result_status = mysql_query($status_query);
+						while ($row = mysql_fetch_assoc($result_status))
 						{
-							echo '<h1><center> FORM WAS REJECTED! </center></h1>';
+							if ( $row['comments'] == 'NONE')
+							{
+								echo '<h1>You Need to State the Reason Why you Reject The Form</h1>';
+								?><input type = "text" name = "comment"> 
+								  <input type = 'hidden' name = "formid" value = " <?php echo $formid; ?>">
+								<input type = "submit" name = "submitcomment" value = "submit comment">
+								<?php
+							}
+							else
+							{
+								
+								$update = "UPDATE forms  SET status = 'REJECTED BY IMMEDIATE SUPERIOR' WHERE formid = '$formid'";
+								$result_update = mysql_query($update);
+								if ( $result_update)
+								{
+									echo '<h1><center> FORM WAS REJECTED! </center></h1>';
+								}
+								
+								$query = "SELECT * FROM forms WHERE formid = '$formid'";
+								$results = mysql_query($query);
+								while ($record = mysql_fetch_assoc($results))
+								{
+									$username = $record['username'];
+									$requestorid = $record['requestor_id'];
+									$status = $record['status'];
+									$itemname = $record['item_name'];
+								}
+								
+								$insert = "INSERT INTO superior (requestor_id,formid,username,itemname,status)
+									VALUES ('$requestorid','$formid','$username','$itemname','$status')";
+								$results_insert = mysql_query($insert); 
+							}
 						}
 						
-						$query = "SELECT * FROM forms WHERE formid = '$formid'";
-						$results = mysql_query($query);
-						while ($record = mysql_fetch_assoc($results))
-						{
-							$username = $record['username'];
-							$requestorid = $record['requestor_id'];
-							$status = $record['status'];
-							$itemname = $record['item_name'];
-						}
 						
-						$insert = "INSERT INTO superior (requestor_id,formid,username,itemname,status)
-							VALUES ('$requestorid','$formid','$username','$itemname','$status')";
-						$results_insert = mysql_query($insert);
+						
 					}
 					elseif ($username == 'section1')
 					{
-						$update = "UPDATE forms  SET status = 'REJECTED BY ICTC SECTION' WHERE formid = '$formid'";
+						$update = "UPDATE forms  SET status  = 'REJECTED BY ICTC SECTION' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						if ( $result_update)
 						{
@@ -296,7 +344,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'purchasing1')
 					{
-						$update = "UPDATE forms  SET status = 'REJECTED BY PURCHASING DEPT.' WHERE formid = '$formid'";
+						$update = "UPDATE forms SET status = 'REJECTED BY PURCHASING DEPT.' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						if ( $result_update)
 						{
@@ -324,6 +372,7 @@ $username = $_SESSION['username'];
 				?>
 			
 			</center>
+			</form>
 		</div>
 		
 		

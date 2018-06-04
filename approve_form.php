@@ -334,6 +334,9 @@ $username = $_SESSION['username'];
 						$insert = "INSERT INTO purchasing (directorid,sectionid,superiorid,requestorid,formid,username,itemname,status)
 							VALUES ('$directorid','$sectionid','$superiorid','$requestorid','$formid','$username','$itemname','$status')";
 						$results_insert = mysql_query($insert);
+						
+						$update_complete = "UPDATE forms SET status = 'COMPLETE' WHERE formid = '$formid'";
+						$result_update = mysql_query($update_complete);
 				
 					}
 				?>

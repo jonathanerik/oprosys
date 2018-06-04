@@ -152,11 +152,10 @@ body{
 </style> 
 <?php
 	session_start();
-	ob_start();
 	include('dbconnect.inc');
 	$username=$_POST['uname'];
 	$password=$_POST['password'];
-	$query1="SELECT * FROM requestors WHERE username = '$username' AND pass = '$password'";
+	$query1="SELECT * FROM oprosys.requestors WHERE username = '$username' AND pass = '$password'";
 	$query2="SELECT * FROM admins WHERE username ='$username' AND pass ='$password'";
 	$query3="SELECT * FROM approvers WHERE username ='$username' AND pass ='$password'";
 
@@ -212,12 +211,12 @@ body{
 						{
 							$_SESSION['u_id']=$row['approver_id'];
 						}
-						header("Location: profile.php");
+						header("Location: notifs.php");
 					}
 					else
 					{
 						echo "<h2>Invalid user/password</h2>";
-						echo '<a href="index.html"><button class = "button">Login</button></a>';
+						echo '<a href="home.html"><button class = "button">Login</button></a>';
 					}
 				?>
 			

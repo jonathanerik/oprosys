@@ -254,6 +254,7 @@ $username = $_SESSION['username'];
 		font-weight: strong;
 		color: white;
 	}
+	
 </style>
 <body>
 	
@@ -294,7 +295,7 @@ $username = $_SESSION['username'];
 				<center><button class = "button" onclick = "location.href='logout.php'" >Log Out</button></center>
 			</div>
 		</div>
-		<div class = "register" id = "div-id-name">
+		<div class = "register">
 			
 			
 			<table>
@@ -338,7 +339,49 @@ $username = $_SESSION['username'];
 			</table>
 			
 		</div>
+		<div class = "register" id = "div-id-name" style = "margin: auto; visibility: hidden;">
+			
+			
+			<table style = "margin: auto;">
+			
+				<th style = "text-align: center; border: 1px solid black; width: 200px;">Date Requested</th>
+				<th style = "text-align: center; border: 1px solid black; width: 200px;">Username</th>
+				<th style = "text-align: center; border: 1px solid black; width: 200px;">Item Name</th>
+				<th style = "text-align: center; border: 1px solid black; width: 200px;">Status</th>
+				<th colspan = 2 style = "width: 150px;"></th>
+				<?php
+					
+					
+					$view = "SELECT * FROM forms ORDER BY date_requested DESC";
+					$result = mysql_query($view);
+					$numrows = mysql_num_rows($result);
+					if ( $numrows == 0)
+					{
+						echo '<tr><td colspan = 4><h1><center> THERE ARE NO REQUESTS</center></h1></td></tr>';
+					}
+					else
+					{
+						while ( $record = mysql_fetch_assoc($result))
+						{
+
+							echo '<tr>';
+				
+								echo '<td style = "text-align: center; border: 1px solid black; width: 200px;">'.$record['date_requested'].'</td>';
+								echo '<td style = "text-align: center; border: 1px solid black; width: 200px;">'.$record['username'].'</td>';
+								echo '<td style = "text-align: center; border: 1px solid black; width: 200px;">'.$record['item_name'].'</td>';
+								echo '<td style = "text-align: center; border: 1px solid black; width: 200px;">'.$record['status'].'</td>';
+							echo '</td></tr>';
+						}
+					}
+					
+				
+				
+				?>
+				
+				
+			</table>
 		
+		</div>
 	
 
 		
