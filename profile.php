@@ -197,6 +197,7 @@
 				
 					if ($_SESSION['position'] == 'user')
 					{
+						
 						header("Location: status.php");
 					} 
 					elseif ($_SESSION['position'] == 'approver')

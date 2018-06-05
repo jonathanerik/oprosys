@@ -309,9 +309,10 @@ $username = $_SESSION['username'];
 				<th>Status</th>
 				<th colspan = "3" style = "width: 170px;">Action</th>
 				<?php
-					include('dbconnect.inc');
+					
 					if ($username == 'superior1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM forms WHERE status = 'PENDING' ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
@@ -337,6 +338,7 @@ $username = $_SESSION['username'];
 					}	
 					elseif ($username == 'section1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM superior WHERE status = 'APPROVED BY IMMEDIATE SUPERIOR' ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
@@ -362,6 +364,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'director1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM section WHERE status = 'APPROVED BY ICTC SECTION' ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
@@ -387,6 +390,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'purchasing1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM director WHERE status = 'APPROVED BY ICTC DIRECTOR' ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);

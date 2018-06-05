@@ -344,6 +344,7 @@ $_SESSION['formid'] = $formid;
 			
 			if ( $username == 'superior1')
 			{
+				include('dbconnect.inc');
 
 			?>
 		
@@ -406,6 +407,7 @@ $_SESSION['formid'] = $formid;
 			}
 			elseif( $username == 'section1')
 			{
+				include('dbconnect.inc');
 			?>
 				<table>
 					<form action = "edit_form1.php" method = "POST">

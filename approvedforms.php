@@ -309,9 +309,10 @@ $username = $_SESSION['username'];
 				<th>Status</th>
 				<th colspan = "3" style = "width: 170px;">Action</th>
 				<?php
-					include('dbconnect.inc');
+					
 					if ($username == 'superior1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM superior ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
@@ -335,6 +336,7 @@ $username = $_SESSION['username'];
 					}	
 					elseif ($username == 'section1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM section  ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
@@ -358,6 +360,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'director1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM director ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);
@@ -381,6 +384,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'purchasing1')
 					{
+						include('dbconnect.inc');
 						$view = "SELECT * FROM purchasing WHERE status = 'APPROVED BY PURCHASING DEPT.' ";
 						$result = mysql_query($view);
 						$resultif = mysql_num_rows($result);

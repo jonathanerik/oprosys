@@ -219,15 +219,16 @@ $username = $_SESSION['username'];
 			<form action = "reject_form.php" method = "POST" > 
 			<center>
 				<?php
-					include('dbconnect.inc');
+					
 					
 					$formid = $_REQUEST['formid'];
 					if (isset($_POST['submitcomment']))
 					{
+						;
 						$comments = $_REQUEST['comment'];
 						if ( $username == 'superior1')
 						{
-							
+							include('dbconnect.inc');
 							$update = "UPDATE forms  SET status = 'REJECTED BY IMMEDIATE SUPERIOR', comments = '$comments' WHERE formid = '$formid'";
 							$result_update = mysql_query($update);
 							if ( $result_update)
@@ -252,6 +253,7 @@ $username = $_SESSION['username'];
 					}
 					if ($username == 'superior1')
 					{
+						include('dbconnect.inc');
 						$status_query = "SELECT * FROM forms WHERE formid = '$formid'";
 						$result_status = mysql_query($status_query);
 						while ($row = mysql_fetch_assoc($result_status))
@@ -295,6 +297,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'section1')
 					{
+						include('dbconnect.inc');
 						$update = "UPDATE forms  SET status  = 'REJECTED BY ICTC SECTION' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						if ( $result_update)
@@ -319,6 +322,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'director1')
 					{
+						include('dbconnect.inc');
 						$update = "UPDATE forms  SET status = 'REJECTED BY ICTC DIRECTOR' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						if ( $result_update)
@@ -344,6 +348,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'purchasing1')
 					{
+						include('dbconnect.inc');
 						$update = "UPDATE forms SET status = 'REJECTED BY PURCHASING DEPT.' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						if ( $result_update)

@@ -222,12 +222,13 @@ $username = $_SESSION['username'];
 			</div>
 			<center>
 				<?php
-					include('dbconnect.inc');
+				
 					
 					$formid = $_REQUEST['formid'];
 					
 					if ($username == 'superior1')
 					{
+						include('dbconnect.inc');
 						$update = "UPDATE forms  SET status = 'APPROVED BY IMMEDIATE SUPERIOR' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						if ( $result_update)
@@ -251,6 +252,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ($username == 'section1')
 					{
+						include('dbconnect.inc');
 						$update = "UPDATE forms SET status = 'APPROVED BY ICTC SECTION' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						$update1 = "UPDATE superior SET status = 'APPROVED BY ICTC SECTION' WHERE formid = '$formid'";
@@ -277,6 +279,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ( $username == 'director1')
 					{
+						include('dbconnect.inc');
 						$update = "UPDATE forms SET status = 'APPROVED BY ICTC DIRECTOR' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						$update2 = "UPDATE superior SET status = 'APPROVED BY ICTC DIRECTOR' WHERE formid = '$formid'";
@@ -306,6 +309,7 @@ $username = $_SESSION['username'];
 					}
 					elseif ( $username == 'purchasing1')
 					{
+						include('dbconnect.inc');
 						$update = "UPDATE forms SET status = 'APPROVED BY PURCHASING DEPT.' WHERE formid = '$formid'";
 						$result_update = mysql_query($update);
 						$update3 = "UPDATE superior SET status = 'APPROVED BY PURCHASING DEPT.' WHERE formid = '$formid'";

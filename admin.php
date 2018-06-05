@@ -351,7 +351,7 @@ $username = $_SESSION['username'];
 				<th colspan = 2 style = "width: 150px;"></th>
 				<?php
 					
-					
+						include('dbconnect.inc');
 					$view = "SELECT * FROM forms ORDER BY date_requested DESC";
 					$result = mysql_query($view);
 					$numrows = mysql_num_rows($result);

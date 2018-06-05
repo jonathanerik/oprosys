@@ -3,9 +3,9 @@
 // mysqli_real_connect($con, "oprosys-mysqldbserver.mysql.database.azure.com", "akashil@oprosys-mysqldbserver", "P@ssw0rd", "oprosys","3306");
 
 	$hostname='oprosys-mysqldbserver.mysql.database.azure.com';
-	$username='akashil@oprosys-mysqldbserver';
+	$user='akashil@oprosys-mysqldbserver';
 	$password='P@ssw0rd';
-	$conn=mysql_connect($hostname, $username, $password) 
+	$conn=mysql_connect($hostname, $user, $password) 
 		or die ('Error connnecting to mysql');mysql_select_db('oprosys');
 
  ?>

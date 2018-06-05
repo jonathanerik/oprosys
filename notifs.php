@@ -3,7 +3,7 @@
 $itemcode = rand();
 $id = $_SESSION['u_id'];
 $username = $_SESSION['username'];
-include ('dbconnect.inc');
+
 ?>
 <html>
 
@@ -262,8 +262,10 @@ include ('dbconnect.inc');
 		
 		<div class = "register">
 			<?php
+			
 				if ( $username == 'superior1')
 				{
+					include ('dbconnect.inc');
 					$query = "SELECT * FROM forms WHERE status = 'PENDING'";
 					$result = mysql_query($query);
 					$numrows = mysql_num_rows($result);
@@ -272,6 +274,7 @@ include ('dbconnect.inc');
 				}
 				elseif ( $username == 'section1' )
 				{
+					include ('dbconnect.inc');
 					$query = "SELECT * FROM superior WHERE status = 'APPROVED BY IMMEDIATE SUPERIOR'";
 					$result = mysql_query($query);
 					$numrows = mysql_num_rows($result);
@@ -280,6 +283,7 @@ include ('dbconnect.inc');
 				}
 				elseif ( $username == 'director1')
 				{
+					include ('dbconnect.inc');
 					$query = "SELECT * FROM section WHERE status = 'APPROVED BY ICTC SECTION'";
 					$result = mysql_query($query);
 					$numrows = mysql_num_rows($result);
@@ -288,6 +292,7 @@ include ('dbconnect.inc');
 				}
 				elseif ( $username == 'purchasing1' )
 				{
+					include ('dbconnect.inc');
 					$query = "SELECT * FROM director WHERE status = 'APPROVED BY ICTC DIRECTOR'";
 					$result = mysql_query($query);
 					$numrows = mysql_num_rows($result);

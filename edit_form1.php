@@ -276,6 +276,7 @@ $formid = $_SESSION['formid'];
 			}
 			if ( $username == 'superior1')
 			{
+				include('dbconnect.inc');
 				$comments = $_POST['comments'];
 				$update = "UPDATE forms SET comments ='$comments' WHERE formid = '$formid'";
 				$result_update =mysql_query($update);
@@ -341,6 +342,7 @@ $formid = $_SESSION['formid'];
 			}
 			elseif ( $username == 'section1')
 			{
+				include('dbconnect.inc');
 				$recommendations = $_REQUEST['recommendations'];
 				$update = "UPDATE forms SET recommendations ='$recommendations' WHERE formid = '$formid'";
 				$results_update = mysql_query($update);
